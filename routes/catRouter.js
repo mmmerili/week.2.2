@@ -1,12 +1,10 @@
 'use strict';
 const express = require('express');
-var router = express.Router();
+const router = express.Router();
+const catController = require('../models/controllers/catController');
 
 router.route('/')
-.get((req, res) => {
-    console.log('get all cats');
-    res.send('Hello cat!')
-  })
+.get(catController.cat_list_get)
   
 .post((req, res) => {
   console.log('post cat');
