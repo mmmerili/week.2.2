@@ -5,6 +5,8 @@ const port = 3000;
 const catRouter = require('./routes/catRouter')
 
 app.use(express.static('public'));
+//app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req,res) => {
   res.send('Hello World!');
